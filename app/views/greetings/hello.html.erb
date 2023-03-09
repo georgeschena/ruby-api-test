@@ -1,0 +1,17 @@
+<h1>Hello,
+  <%= @name %>!</h1>
+
+<%= form_tag '/hello', method: 'get' do %>
+  <%= label_tag :name, 'Enter your name:' %>
+  <%= text_field_tag :name %>
+  <%= submit_tag 'Submit' %>
+<% end %>
+
+<% if @results.present? %>
+  <h2>Search Results</h2>
+  <ul>
+    <% @results.each do |result| %>
+      <li><%= result %></li>
+    <% end %>
+  </ul>
+<% end %>
